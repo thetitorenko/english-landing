@@ -1906,3 +1906,25 @@ body {
     width: 95%;
   }
 }
+
+
+/* Хаки с отступами и наездами */
+@media (max-width: 768px) {
+  .section.fun-facts {
+    margin-bottom: 50px; /* Меньший отступ для мобильных устройств */
+  }
+
+  .section.testimonials {
+    padding-top: 50px; /* Меньший отступ для мобильных устройств */
+  }
+}
+
+@media (max-width: 768px) {
+  .section.testimonials .col-lg-5 {
+    margin-bottom: 20px; /* Отступ снизу для текстовки */
+  }
+
+  .section.testimonials .col-lg-7 {
+    margin-top: 20px; /* Альтернативный отступ сверху для отзывов */
+  }
+}
