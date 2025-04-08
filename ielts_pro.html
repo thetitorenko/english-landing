@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IELTS PRO</title>
+  <title>Kseniya's Academy | IELTS PRO</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     html {
       scroll-behavior: smooth;
@@ -91,6 +92,15 @@
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+    .review-text {
+      margin-bottom: 10px;
+    }
+    .reviewer-name {
+      color: #666;
+      font-style: italic;
+      margin: 0;
+      text-align: right;
+    }
     .socials a {
       margin-right: 1rem;
       font-size: 24px;
@@ -101,6 +111,62 @@
       padding: 2rem;
       font-size: 0.9rem;
       color: #999;
+    }
+    .pricing-plans {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pricing-plan {
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .plan-name {
+      font-size: 1.5rem;
+      color: #1e90ff;
+      margin-bottom: 1rem;
+    }
+
+    .plan-price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-features li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      color: #1e90ff;
+      transition: transform 0.3s;
+    }
+
+    .contact-icon:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -151,23 +217,79 @@
   <section id="reviews">
     <h2>Отзывы студентов</h2>
     <div class="reviews">
-      <div class="review">⭐⭐⭐⭐⭐<br>Курс очень структурированный и понятный! Благодаря нему сдала экзамен на 7.5!</div>
-      <div class="review">⭐⭐⭐⭐⭐<br>Отличная платформа, удобный формат. Особенно понравились Speaking-сессии.</div>
+        <div class="review">
+            <p class="review-text"><br>Ксения, добрый день!
+              Хочу оставить небольшой отзыв о нашем сотрудничестве по обучению детей. У меня двое абсолютно разных детей. До начала занятий с вами они уже изучали английский язык — в самых разных форматах: и в группах, и индивидуально, с разными преподавателями.
+              С уверенностью могу сказать: вы смогли найти подход к каждому из них, несмотря на разные характеры. Дети очень полюбили занятия с вами, хотя требования всегда были на 100%, без каких-либо послаблений.
+              Динамика обучения, структура занятий, чёткая отчётность и сама система преподавания — всё это дало результат, значительно превосходящий прежний опыт. Ваша методика, разнообразие форм работы, контроль за выполнением заданий и отношение к детям — всё это вызывает большое уважение. Это действительно профессиональный подход.
+              Я очень надеюсь, что все знания, полученные от вас, помогут им и в дальнейшем. Впереди IELTS — держим пальцы крестиком за сына 😊 А у Дианы сложный курс — надеемся только на лучший результат.
+              Спасибо за ваш труд! Очень благодарна 🌸
+              </p>
+            <p class="reviewer-name">— Ирина Сорокина, родитель студена</p>
+        </div>
+        <div class="review">
+            <p class="review-text"><br>Выражаю огромную благодарность за обучение! Профессиональный подход, высокие требования дали отличный результат в знании английского языка. Буквально за 2 месяца на уровень выше!</p>
+            <p class="reviewer-name">— Галина, родитель студена</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Тарифы</h2>
+    <div class="pricing-plans">
+      <div class="pricing-plan">
+        <h3 class="plan-name">Базовый</h3>
+        <div class="plan-price">14 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Доступ к курсу на 3 месяца</li>
+          <li>✅ Все обучающие материалы</li>
+          <li>✅ Тесты и практические задания</li>
+        </ul>
+      </div>
+      
+      <div class="pricing-plan">
+        <h3 class="plan-name">Стандарт</h3>
+        <div class="plan-price">24 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Доступ к курсу на 6 месяцев</li>
+          <li>✅ Все материалы базового тарифа</li>
+          <li>✅ 2 индивидуальные консультации</li>
+          <li>✅ Проверка Writing заданий</li>
+        </ul>
+      </div>
+
+      <div class="pricing-plan">
+        <h3 class="plan-name">Премиум</h3>
+        <div class="plan-price">34 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Неограниченный доступ к курсу</li>
+          <li>✅ Все материалы стандартного тарифа</li>
+          <li>✅ 5 индивидуальных консультаций</li>
+          <li>✅ Регулярная проверка заданий</li>
+          <li>✅ Персональный ментор</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Стоимость и контакт</h2>
-    <p><strong>Цена:</strong> 14 900 ₽</p>
-    <div class="socials">
-      <a href="mailto:teacher@example.com">📧</a>
-      <a href="https://t.me/teacher" target="_blank">📱</a>
-      <a href="https://instagram.com/teacher" target="_blank">📸</a>
+    <h2>Свяжитесь с нами</h2>
+    <p>Выберите удобный способ связи для получения подробной информации и оплаты курса:</p>
+    <div class="contact-icons">
+      <a href="https://www.instagram.com/kseniya_academy/" target="_blank" class="contact-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/+77782004417" target="_blank" class="contact-icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:libranefertiti93@gmail.com" class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
   </section>
 
   <footer>
-    © IELTS PRO 2024. Все права защищены.
+    © Kseniya's Academy 2025. Все права защищены.
   </footer>
 
   <script>
