@@ -562,3 +562,90 @@ html, body {
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
 }
+
+/* Lesson Styles */
+.lesson {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson h3 {
+    margin-bottom: 0.5rem;
+    color: #1e90ff;
+    font-size: 1.25rem;
+}
+
+.lesson p {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Swiper Styles */
+.swiper-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenshot {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1e90ff;
+    transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #1873cc;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+    background: #1e90ff;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background: #1873cc;
+    opacity: 1;
+}
+
+/* Styles for the Show More button */
+#show-more-btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#show-more-btn:hover {
+    background-color: #1873cc;
+}

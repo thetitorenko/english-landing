@@ -48,3 +48,35 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
         this.textContent = isCollapsed ? 'Свернуть' : 'Читать полностью';
     });
 });
+
+// Initialize Swiper
+document.addEventListener('DOMContentLoaded', () => {
+  const swiper = new Swiper('.swiper-container', {
+    loop: true, // Enable infinite loop
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000, // Auto-slide every 3 seconds
+      disableOnInteraction: false,
+    },
+  });
+});
+
+function toggleLessons() {
+    const hiddenLessons = document.getElementById('hidden-lessons');
+    const showMoreBtn = document.getElementById('show-more-btn');
+
+    if (hiddenLessons.style.display === 'none' || hiddenLessons.style.display === '') {
+        hiddenLessons.style.display = 'block';
+        showMoreBtn.textContent = 'Свернуть';
+    } else {
+        hiddenLessons.style.display = 'none';
+        showMoreBtn.textContent = 'Показать больше';
+    }
+}

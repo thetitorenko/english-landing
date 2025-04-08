@@ -9,6 +9,7 @@
   <!-- External Resources -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css">  
@@ -56,25 +57,142 @@
 
   <!-- Platform Screenshots Section -->
   <section id="screenshots">
-    <h2>Скриншоты платформы</h2>
-    <img src="assets/images/course-01.jpg" alt="Скриншот курса" class="screenshot">
-    <img src="assets/images/course-02.jpg" alt="Скриншот курса" class="screenshot">
-  </section>
+  <h2>Скриншоты платформы</h2>
+  <!-- Swiper Container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="assets/images/edvibe_1.jpg" alt="Скриншот курса 1" class="screenshot">
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="assets/images/edvibe_2.jpg" alt="Скриншот курса 2" class="screenshot">
+      </div>
+      <!-- Add more slides as needed -->
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
   <!-- Course Content Section with Lessons -->
   <section id="content">
     <h2>Содержание курса</h2>
-    <div class="lesson" onclick="togglePanel(this)">Урок 1: Введение в экзамен IELTS</div>
-    <div class="panel">Подробное объяснение формата экзамена, критериев оценки и стратегий подготовки.</div>
+    <!-- First 7 Lessons -->
+    <div class="lesson" onclick="togglePanel(this)">LESSON 1: IELTS punctuation</div>
+    <div class="panel">Punctuation rules, Hyphenated Words.</div>
 
-    <div class="lesson" onclick="togglePanel(this)">Урок 2: Reading и Listening</div>
-    <div class="panel">Методики анализа текстов и аудио с акцентом на практику.</div>
+    <div class="lesson" onclick="togglePanel(this)">LESSON 2: Essay Types, Clear position</div>
+    <div class="panel">Analyzing essay prompts and identifying the clear position. How to present clear position. Understanding through analyzing.</div>
 
-    <div class="lesson" onclick="togglePanel(this)">Урок 3: Writing</div>
-    <div class="panel">Разбор заданий Academic и General, шаблоны и примеры.</div>
+    <div class="lesson" onclick="togglePanel(this)">LESSON 3: Anti-repetition Strategy</div>
+    <div class="panel">Avoiding repetition: reference words+shell nouns and preventing off-topic ideas.</div>
 
-    <div class="lesson" onclick="togglePanel(this)">Урок 4: Speaking</div>
-    <div class="panel">Подготовка к Part 1–3, практика с тренером и носителями языка.</div>
+    <div class="lesson" onclick="togglePanel(this)">LESSON 4: How to get ideas</div>
+    <div class="panel">Free Writing Skill, Brainstorm and organize ideas for essays.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 5: Grammar Accuracy</div>
+    <div class="panel">Common grammar errors in IELTS essay. Articles, Prepositions, Grammar Tenses.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 6: Practice: Introduction and General statement</div>
+    <div class="panel">Peer-review + feedback on practice essay.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 7: The role of Topic Sentence in the Essay</div>
+    <div class="panel">1 Block of the course: Task Achievement. Here you will cover: Introduction-Topic Sentence; Controlling idea; Peel paragraphs.</div>
+
+    <!-- Hidden Lessons -->
+    <div id="hidden-lessons" style="display: none;">
+      <div class="lesson" onclick="togglePanel(this)">LESSON 8: Critical thinking</div>
+      <div class="panel">Developing body paragraphs with supporting details and examples.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 9: Essay Paragraphs</div>
+      <div class="panel">How to show the examiner the range of cohesive devices.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 10: Contrast and Comparison Essays</div>
+      <div class="panel">Practice writing contrasting viewpoints and discussing both sides of an argument.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 11: How to write 7+ Conclusion </div>
+      <div class="panel">Mastering the conclusion with a strong restatement of thesis and summarizing key points. Analyzing essay prompts and identifying the best way to write the Conclusion. </div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 12: Inversion, Word Choice</div>
+      <div class="panel">Demonstrating a variety of sentence structures, including the inversion and appropriate word choice.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 13: Counterarguments in Argumentative essays</div>
+      <div class="panel">Introducing counterarguments in Argumentative essay.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 14: Mock Test №1 with a timer + Consultation</div>
+      <div class="panel">Mock test with a Timer. Feedback. Review exam strategies and tips for success. Personalized guidance on areas. </div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 15: Hedging language in Cause/Effect essays</div>
+      <div class="panel">How to use hedging language in the essay types for smooth flow of ideas.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 16: Reading session 1</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 17: Benefits of Academic Reading</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 18: Reading: Completion tasks </div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 19: Reading Challenging Task: Headings; Writing Task 1: Line Graph</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 20: Reading: True/False/Not Given; Writing Task 1: Bar charts</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 21: Mock Test №2</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 22: Reading: Matching; Writing Task 1: Bar Charts/Maps</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 23: Bar Chart and Line Graph, stage 2 </div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 24: Writing 1: Process Diagrams; Fix: Line Graph + Reading: Headings; Speaking 3 sections</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 25: Listening skills, Part 1 and Part 2; Pie Charts</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 26: Maps and Process Diagrams</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 27: Maps in Writing and Listening</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 28: MOCK TEST №3</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 29: Reading practice, Speaking Part 3</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 30: PIE CHARTS</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 31: TABLES</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 32: Discursive Essays</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 33: BAR CHART AND PIE CHART</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 34: Timing Practice FULL Writing Section</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 35: MOCK TEST №4 Listening and Reading Tests</div>
+      <div class="panel"></div>
+    </div>
+
+    <!-- Show More Button -->
+    <button id="show-more-btn" onclick="toggleLessons()">Показать больше</button>
   </section>
 
   <!-- Student Reviews Section -->
@@ -164,6 +282,7 @@
 
   <!-- Scripts -->
   <script src="assets/scripts.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 </body>
 </html>
