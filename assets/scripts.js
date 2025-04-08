@@ -53,6 +53,9 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.swiper-container', {
     loop: true, // Enable infinite loop
+    centeredSlides: true, // Center the active slide
+    slidesPerView: 1, // Show one slide at a time
+    spaceBetween: 20, // Add space between slides
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
