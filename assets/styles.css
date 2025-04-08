@@ -1,0 +1,564 @@
+/* Base styles and resets */
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+background-color: #fdfdfd;
+color: #333;
+padding-top: 70px; /* Height of header */
+}
+
+/* Header and Navigation Components */
+header {
+background-color: white;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed; /* Change from sticky to fixed */
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Navigation Toggle Button */
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+padding: 5px;
+z-index: 1001;
+}
+.hamburger span {
+background: #333;
+height: 3px;
+width: 25px;
+margin: 3px 0;
+display: block;
+transition: all 0.3s ease;
+}
+
+/* Main Navigation Menu */
+.nav-menu {
+display: flex;
+}
+nav a {
+margin-left: 1.5rem;
+text-decoration: none;
+color: #333;
+font-weight: 600;
+transition: color 0.3s;
+}
+nav a:hover {
+color: #1e90ff;
+}
+
+/* Section Layout and Animations */
+section {
+max-width: 1200px;
+margin: 0 auto;
+padding: 4rem 2rem;
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+section.visible {
+opacity: 1;
+transform: translateY(0);
+}
+h1, h2 {
+margin-bottom: 1rem;
+color: #1e90ff;
+}
+h2 {
+text-align: center;
+margin-bottom: 2rem;
+position: relative;
+}
+ul li {
+margin-bottom: 0.5rem;
+font-size: 1.1rem;
+}
+.screenshot {
+max-width: 100%;
+margin: 1rem auto;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+.screenshot:hover {
+transform: translateY(-5px);
+}
+.accordion {
+cursor: pointer;
+padding: 1rem;
+border-radius: 8px;
+background-color: #eee;
+margin-bottom: 0.5rem;
+transition: background-color 0.3s;
+}
+.accordion:hover {
+background-color: #ddd;
+}
+.panel {
+display: none;
+padding: 1rem;
+background-color: #f9f9f9;
+border-radius: 0 0 8px 8px;
+}
+.reviews {
+display: flex;
+gap: 2rem;
+margin-top: 2rem;
+flex-wrap: wrap;
+justify-content: center;
+}
+.review {
+flex: 1;
+min-width: 300px;
+max-width: 400px;
+background: #fff;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+}
+.review:hover {
+transform: translateY(-5px);
+}
+.review-text {
+margin-bottom: 10px;
+position: relative;
+overflow: hidden;
+}
+
+.review-text.collapsed {
+max-height: 100px;
+}
+
+.review-text.expanded {
+max-height: none;
+}
+
+.read-more-btn {
+background: none;
+border: none;
+color: #1e90ff;
+cursor: pointer;
+font-size: 0.9rem;
+padding: 5px 0;
+margin-top: 10px;
+text-decoration: underline;
+}
+
+.read-more-btn:hover {
+color: #1873cc;
+}
+
+.fade-bottom {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 50px;
+background: linear-gradient(transparent, white);
+pointer-events: none;
+display: none;
+}
+
+.review-text.collapsed .fade-bottom {
+display: block;
+}
+.reviewer-name {
+color: #666;
+font-style: italic;
+margin: 0;
+text-align: right;
+}
+.socials a {
+margin-right: 1rem;
+font-size: 24px;
+text-decoration: none;
+}
+footer {
+text-align: center;
+padding: 2rem;
+font-size: 0.9rem;
+color: #999;
+}
+.pricing-plans {
+display: flex;
+gap: 2rem;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 2rem;
+}
+
+.pricing-plan {
+flex: 1;
+min-width: 280px;
+max-width: 320px;
+background: white;
+padding: 2rem;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+text-align: center;
+transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+transform: translateY(-5px);
+}
+
+.plan-name {
+font-size: 1.5rem;
+color: #1e90ff;
+margin-bottom: 1rem;
+}
+
+.plan-price {
+font-size: 2rem;
+font-weight: bold;
+margin-bottom: 1.5rem;
+}
+
+.plan-features {
+list-style: none;
+padding: 0;
+margin-bottom: 1.5rem;
+}
+
+.plan-features li {
+margin-bottom: 0.5rem;
+}
+
+.contact-icons {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-top: 2rem;
+}
+
+.contact-icon {
+font-size: 2.5rem;
+color: #1e90ff;
+transition: transform 0.3s;
+}
+
+.contact-icon:hover {
+transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+/* Mobile Navigation Adjustments */
+.hamburger {
+    display: flex;
+}
+
+.nav-menu {
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu a {
+    margin: 10px 0;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Mobile Menu Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Header Height */
+header {
+    height: 70px;
+    padding: 0 2rem;
+}
+
+/* Mobile Content Positioning */
+body {
+    padding-top: 70px;
+    position: relative;
+}
+
+/* Mobile Menu Display States */
+.nav-menu:not(.active) {
+    display: none;
+}
+
+/* Mobile Typography Adjustments */
+h1 {
+    font-size: 1.2rem !important; /* Уменьшаем размер на мобильных */
+}
+
+/* Mobile Section Spacing */
+section {
+    padding: 2rem 1rem;
+}
+
+/* Mobile Cards Layout */
+.pricing-plan,
+.review {
+    min-width: auto;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.pricing-plans,
+.reviews {
+    gap: 1rem;
+    padding: 0 1rem; /* Add horizontal padding */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#pricing,
+#reviews {
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+}
+
+/* Prevent Horizontal Scrolling */
+html, body {
+overflow-x: hidden;
+width: 100%;
+}
+
+/* Стили для секции содержания */
+#content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.accordion {
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.accordion:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.panel {
+    max-width: 100%;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    background-color: white;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Стили для секции отзывов */
+#reviews {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+    #content,
+    #reviews {
+        padding: 2rem 1rem;
+    }
+
+    .review {
+        flex: 0 0 90%;
+        padding: 1.5rem;
+    }
+}
+
+/* Общие стили для всех секций */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Специфичные стили для разных секций */
+#about {
+    max-width: 800px;
+}
+
+#screenshots {
+    max-width: 1000px;
+    text-align: center;
+}
+
+#content {
+    max-width: 800px;
+}
+
+#reviews {
+    max-width: 900px;
+}
+
+#pricing {
+    max-width: 1000px;
+}
+
+#contact {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Стили для изображений в секции screenshots */
+.screenshot {
+    max-width: 100%;
+    margin: 1rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: translateY(-5px);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 3rem 1rem;
+    }
+
+    #about,
+    #screenshots,
+    #content,
+    #reviews,
+    #pricing,
+    #contact {
+        padding: 2rem 1rem;
+    }
+
+    .screenshot {
+        margin: 0.5rem auto;
+    }
+
+    .pricing-plan,
+    .review {
+        min-width: 100%;
+        margin: 0 0 1reм 0;
+    }
+
+    .pricing-plans,
+    .reviews {
+        gap: 1rem;
+    }
+}
+
+/* Fix for horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Update reviews and pricing cards for mobile */
+@media screen and (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .pricing-plan,
+    .review {
+        min-width: auto;
+        width: 100%;
+        margin: 0 0 1rem 0;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .pricing-plans,
+    .reviews {
+        gap: 1rem;
+        padding: 0 1rem; /* Add horizontal padding */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #pricing,
+    #reviews {
+        padding: 2rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Styles for Lessons */
+.lesson {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.lesson:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel {
+    display: none;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
