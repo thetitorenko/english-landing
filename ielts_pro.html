@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS PRO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #1e90ff;
+    }
+    section {
+      padding: 3rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+      color: #1e90ff;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .screenshot {
+      max-width: 100%;
+      margin: 1rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .accordion {
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #eee;
+      margin-bottom: 0.5rem;
+      transition: background-color 0.3s;
+    }
+    .accordion:hover {
+      background-color: #ddd;
+    }
+    .panel {
+      display: none;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 0 0 8px 8px;
+    }
+    .reviews {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+    }
+    .review {
+      flex: 0 0 80%;
+      min-width: 280px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .socials a {
+      margin-right: 1rem;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/images/logo_web_1.png" alt="Логотип школы" height="40">
+    <nav>
+      <a href="#about">О курсе</a>
+      <a href="#screenshots">Платформа</a>
+      <a href="#content">Содержание</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1>Курс IELTS PRO</h1>
+    <p>Курс для вас, ЕСЛИ:</p>
+    <ul>
+      <li>✅ Если вы давно хотели пройти обучение со мной, но не совпадало ваше расписание с нашими группами</li>
+      <li>✅ Если вы хотите стать частью IELTS Community и даже после окончания курса будете всегда первыми узнавать о новых ловушках экзамена и изменениях</li>
+      <li>✅ Если вы учитель и хотели бы узнать больше о стратегиях, которые действительно работают при подготовке к IELTS</li>
+      <li>✅ Если вы хотите участвовать в семинарах с участием носителей языка и практиковать свой Speaking не только с вашим IELTS тренером 🗣️</li>
+    </ul>
+  </section>
+
+  <section id="screenshots">
+    <h2>Скриншоты платформы</h2>
+    <img src="assets/images/course-01.jpg" alt="Скриншот курса" class="screenshot">
+    <img src="assets/images/course-02.jpg" alt="Скриншот курса" class="screenshot">
+  </section>
+
+  <section id="content">
+    <h2>Содержание курса</h2>
+    <div class="accordion" onclick="togglePanel(this)">Модуль 1: Введение в экзамен IELTS</div>
+    <div class="panel">Подробное объяснение формата экзамена, критериев оценки и стратегий подготовки.</div>
+
+    <div class="accordion" onclick="togglePanel(this)">Модуль 2: Reading и Listening</div>
+    <div class="panel">Методики анализа текстов и аудио с акцентом на практику.</div>
+
+    <div class="accordion" onclick="togglePanel(this)">Модуль 3: Writing</div>
+    <div class="panel">Разбор заданий Academic и General, шаблоны и примеры.</div>
+
+    <div class="accordion" onclick="togglePanel(this)">Модуль 4: Speaking</div>
+    <div class="panel">Подготовка к Part 1–3, практика с тренером и носителями языка.</div>
+  </section>
+
+  <section id="reviews">
+    <h2>Отзывы студентов</h2>
+    <div class="reviews">
+      <div class="review">⭐⭐⭐⭐⭐<br>Курс очень структурированный и понятный! Благодаря нему сдала экзамен на 7.5!</div>
+      <div class="review">⭐⭐⭐⭐⭐<br>Отличная платформа, удобный формат. Особенно понравились Speaking-сессии.</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Стоимость и контакт</h2>
+    <p><strong>Цена:</strong> 14 900 ₽</p>
+    <div class="socials">
+      <a href="mailto:teacher@example.com">📧</a>
+      <a href="https://t.me/teacher" target="_blank">📱</a>
+      <a href="https://instagram.com/teacher" target="_blank">📸</a>
+    </div>
+  </section>
+
+  <footer>
+    © IELTS PRO 2024. Все права защищены.
+  </footer>
+
+  <script>
+    function togglePanel(el) {
+      const panel = el.nextElementSibling;
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
