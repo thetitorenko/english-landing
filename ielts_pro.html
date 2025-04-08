@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- Meta Information -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kseniya's Academy | IELTS PRO</title>
+
+  <!-- External Resources -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Styles -->
   <style>
+    /* Base styles and resets */
     html {
       scroll-behavior: smooth;
     }
@@ -17,6 +23,8 @@
       background-color: #fdfdfd;
       color: #333;
     }
+
+    /* Header and Navigation Components */
     header {
       background-color: white;
       padding: 1rem 2rem;
@@ -28,6 +36,28 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
+
+    /* Mobile Navigation Toggle Button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      background: #333;
+      height: 3px;
+      width: 25px;
+      margin: 3px 0;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    /* Main Navigation Menu */
+    .nav-menu {
+      display: flex;
+    }
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
@@ -38,8 +68,12 @@
     nav a:hover {
       color: #1e90ff;
     }
+
+    /* Section Layout and Animations */
     section {
-      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease, transform 0.8s ease;
@@ -52,15 +86,24 @@
       margin-bottom: 1rem;
       color: #1e90ff;
     }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
     ul li {
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
     }
     .screenshot {
       max-width: 100%;
-      margin: 1rem 0;
+      margin: 1rem auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .screenshot:hover {
+      transform: translateY(-5px);
     }
     .accordion {
       cursor: pointer;
@@ -81,19 +124,66 @@
     }
     .reviews {
       display: flex;
-      overflow-x: auto;
-      gap: 1rem;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .review {
-      flex: 0 0 80%;
-      min-width: 280px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
       background: #fff;
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .review:hover {
+      transform: translateY(-5px);
     }
     .review-text {
       margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-text.collapsed {
+      max-height: 100px;
+    }
+
+    .review-text.expanded {
+      max-height: none;
+    }
+
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: #1e90ff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 5px 0;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+
+    .read-more-btn:hover {
+      color: #1873cc;
+    }
+
+    .fade-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(transparent, white);
+      pointer-events: none;
+      display: none;
+    }
+
+    .review-text.collapsed .fade-bottom {
+      display: block;
     }
     .reviewer-name {
       color: #666;
@@ -117,17 +207,23 @@
       gap: 2rem;
       justify-content: center;
       flex-wrap: wrap;
+      margin-top: 2rem;
     }
 
     .pricing-plan {
       flex: 1;
       min-width: 280px;
-      max-width: 350px;
+      max-width: 320px;
       background: white;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .pricing-plan:hover {
+      transform: translateY(-5px);
     }
 
     .plan-name {
@@ -168,12 +264,308 @@
     .contact-icon:hover {
       transform: scale(1.1);
     }
+
+    @media screen and (max-width: 768px) {
+      /* Mobile Navigation Adjustments */
+      .hamburger {
+        display: flex;
+      }
+    
+      .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+    
+      .nav-menu.active {
+        right: 0;
+      }
+    
+      .nav-menu a {
+        margin: 10px 0;
+        text-align: center;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    
+      /* Mobile Menu Animation */
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+    
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+    
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile Header Height */
+      header {
+        height: 70px;
+        padding: 0 2rem;
+      }
+
+      /* Mobile Content Positioning */
+      body {
+        padding-top: 0;
+        position: relative;
+      }
+
+      /* Mobile Menu Display States */
+      .nav-menu:not(.active) {
+        display: none;
+      }
+
+      /* Mobile Typography Adjustments */
+      h1 {
+        font-size: 1.2rem !important; /* Уменьшаем размер на мобильных */
+      }
+
+      /* Mobile Section Spacing */
+      section {
+        padding: 2rem 1rem;
+      }
+
+      /* Mobile Cards Layout */
+      .pricing-plan,
+      .review {
+        min-width: auto;
+        width: 100%;
+        margin: 0 0 1rem 0;
+        padding: 1.5rem;
+        box-sizing: border-box;
+      }
+
+      .pricing-plans,
+      .reviews {
+        gap: 1rem;
+        padding: 0 1rem; /* Add horizontal padding */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #pricing,
+      #reviews {
+        padding: 2rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    /* Prevent Horizontal Scrolling */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Стили для секции содержания */
+    #content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .accordion {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+    }
+
+    .accordion:hover {
+        background-color: #e9ecef;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .panel {
+        max-width: 100%;
+        margin: 0 0 1rem;
+        padding: 1rem;
+        border-radius: 0 0 8px 8px;
+        background-color: white;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Стили для секции отзывов */
+    #reviews {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    /* Медиа-запрос для мобильных устройств */
+    @media screen and (max-width: 768px) {
+        #content,
+        #reviews {
+            padding: 2rem 1rem;
+        }
+
+        .review {
+            flex: 0 0 90%;
+            padding: 1.5rem;
+        }
+    }
+
+    /* Общие стили для всех секций */
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Специфичные стили для разных секций */
+    #about {
+        max-width: 800px;
+    }
+
+    #screenshots {
+        max-width: 1000px;
+        text-align: center;
+    }
+
+    #content {
+        max-width: 800px;
+    }
+
+    #reviews {
+        max-width: 900px;
+    }
+
+    #pricing {
+        max-width: 1000px;
+    }
+
+    #contact {
+        max-width: 600px;
+        text-align: center;
+    }
+
+    /* Стили для изображений в секции screenshots */
+    .screenshot {
+        max-width: 100%;
+        margin: 1rem auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .screenshot:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Медиа-запрос для мобильных устройств */
+    @media screen and (max-width: 768px) {
+        section {
+            padding: 3rem 1rem;
+        }
+
+        #about,
+        #screenshots,
+        #content,
+        #reviews,
+        #pricing,
+        #contact {
+            padding: 2rem 1rem;
+        }
+
+        .screenshot {
+            margin: 0.5rem auto;
+        }
+
+        .pricing-plan,
+        .review {
+            min-width: 100%;
+            margin: 0 0 1reм 0;
+        }
+
+        .pricing-plans,
+        .reviews {
+            gap: 1rem;
+        }
+    }
+
+    /* Fix for horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Update reviews and pricing cards for mobile */
+    @media screen and (max-width: 768px) {
+        section {
+            padding: 2rem 1rem;
+        }
+
+        .pricing-plan,
+        .review {
+            min-width: auto;
+            width: 100%;
+            margin: 0 0 1rem 0;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .pricing-plans,
+        .reviews {
+            gap: 1rem;
+            padding: 0 1rem; /* Add horizontal padding */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #pricing,
+        #reviews {
+            padding: 2rem 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
   </style>
 </head>
 <body>
+  <!-- Header with Navigation -->
   <header>
-    <img src="assets/images/logo_web_1.png" alt="Логотип школы" height="40">
-    <nav>
+    <!-- Logo and Course Title -->
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="assets/images/logo_web_1.png" alt="School Logo" height="40">
+      <h1 style="margin: 0; font-size: 1.5rem; color: #333;">IELTS PRO</h1>
+    </div>
+
+    <!-- Mobile Menu Trigger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
       <a href="#about">О курсе</a>
       <a href="#screenshots">Платформа</a>
       <a href="#content">Содержание</a>
@@ -182,9 +574,9 @@
     </nav>
   </header>
 
+  <!-- Course Introduction Section -->
   <section id="about">
-    <h1>Курс IELTS PRO</h1>
-    <p>Курс для вас, ЕСЛИ:</p>
+    <h2>Курс для вас, ЕСЛИ:</h2>
     <ul>
       <li>✅ Если вы давно хотели пройти обучение со мной, но не совпадало ваше расписание с нашими группами</li>
       <li>✅ Если вы хотите стать частью IELTS Community и даже после окончания курса будете всегда первыми узнавать о новых ловушках экзамена и изменениях</li>
@@ -193,12 +585,14 @@
     </ul>
   </section>
 
+  <!-- Platform Screenshots Section -->
   <section id="screenshots">
     <h2>Скриншоты платформы</h2>
     <img src="assets/images/course-01.jpg" alt="Скриншот курса" class="screenshot">
     <img src="assets/images/course-02.jpg" alt="Скриншот курса" class="screenshot">
   </section>
 
+  <!-- Course Content Section with Accordion -->
   <section id="content">
     <h2>Содержание курса</h2>
     <div class="accordion" onclick="togglePanel(this)">Модуль 1: Введение в экзамен IELTS</div>
@@ -214,18 +608,22 @@
     <div class="panel">Подготовка к Part 1–3, практика с тренером и носителями языка.</div>
   </section>
 
+  <!-- Student Reviews Section -->
   <section id="reviews">
     <h2>Отзывы студентов</h2>
     <div class="reviews">
         <div class="review">
-            <p class="review-text"><br>Ксения, добрый день!
-              Хочу оставить небольшой отзыв о нашем сотрудничестве по обучению детей. У меня двое абсолютно разных детей. До начала занятий с вами они уже изучали английский язык — в самых разных форматах: и в группах, и индивидуально, с разными преподавателями.
-              С уверенностью могу сказать: вы смогли найти подход к каждому из них, несмотря на разные характеры. Дети очень полюбили занятия с вами, хотя требования всегда были на 100%, без каких-либо послаблений.
-              Динамика обучения, структура занятий, чёткая отчётность и сама система преподавания — всё это дало результат, значительно превосходящий прежний опыт. Ваша методика, разнообразие форм работы, контроль за выполнением заданий и отношение к детям — всё это вызывает большое уважение. Это действительно профессиональный подход.
-              Я очень надеюсь, что все знания, полученные от вас, помогут им и в дальнейшем. Впереди IELTS — держим пальцы крестиком за сына 😊 А у Дианы сложный курс — надеемся только на лучший результат.
-              Спасибо за ваш труд! Очень благодарна 🌸
-              </p>
-            <p class="reviewer-name">— Ирина Сорокина, родитель студена</p>
+            <div class="review-text collapsed">
+                <p>Ксения, добрый день!
+                  Хочу оставить небольшой отзыв о нашем сотрудничестве по обучению детей. У меня двое абсолютно разных детей. До начала занятий с вами они уже изучали английский язык — в самых разных форматах: и в группах, и индивидуально, с разными преподавателями.
+                  С уверенностью могу сказать: вы смогли найти подход к каждому из них, несмотря на разные характеры. Дети очень полюбили занятия с вами, хотя требования всегда были на 100%, без каких-либо послаблений.
+                  Динамика обучения, структура занятий, чёткая отчётность и сама система преподавания — всё это дало результат, значительно превосходящий прежний опыт. Ваша методика, разнообразие форм работы, контроль за выполнением заданий и отношение к детям — всё это вызывает большое уважение. Это действительно профессиональный подход.
+                  Я очень надеюсь, что все знания, полученные от вас, помогут им и в дальнейшем. Впереди IELTS — держим пальцы крестиком за сына 😊 А у Дианы сложный курс — надеемся только на лучший результат.
+                  Спасибо за ваш труд! Очень благодарна 🌸</p>
+                <div class="fade-bottom"></div>
+            </div>
+            <button class="read-more-btn">Читать полностью</button>
+            <p class="reviewer-name">— Ирина Сорокина, родитель студента</p>
         </div>
         <div class="review">
             <p class="review-text"><br>Выражаю огромную благодарность за обучение! Профессиональный подход, высокие требования дали отличный результат в знании английского языка. Буквально за 2 месяца на уровень выше!</p>
@@ -234,6 +632,7 @@
     </div>
   </section>
 
+  <!-- Pricing Plans Section -->
   <section id="pricing">
     <h2>Тарифы</h2>
     <div class="pricing-plans">
@@ -272,6 +671,7 @@
     </div>
   </section>
 
+  <!-- Contact Information Section -->
   <section id="contact">
     <h2>Свяжитесь с нами</h2>
     <p>Выберите удобный способ связи для получения подробной информации и оплаты курса:</p>
@@ -288,10 +688,12 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     © Kseniya's Academy 2025. Все права защищены.
   </footer>
 
+  <!-- Scripts -->
   <script>
     function togglePanel(el) {
       const panel = el.nextElementSibling;
@@ -310,6 +712,38 @@
 
     sections.forEach(section => {
       observer.observe(section);
+    });
+
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Read More functionality
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const reviewText = this.previousElementSibling;
+            const isCollapsed = reviewText.classList.contains('collapsed');
+            
+            reviewText.classList.toggle('collapsed');
+            reviewText.classList.toggle('expanded');
+            
+            this.textContent = isCollapsed ? 'Свернуть' : 'Читать полностью';
+        });
     });
   </script>
 </body>
