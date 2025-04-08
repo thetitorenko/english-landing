@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kseniya's Academy | IELTS PRO</title>
+
+  <!-- External Resources -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/styles.css">  
+</head>
+<body>
+
+  <!-- Header with Navigation -->
+  <header>
+    <!-- Logo and Course Title -->
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="https://kseniya.titorenko.org/" style="text-decoration: none;">
+        <img src="assets/images/logo.png" alt="School Logo" height="40">
+      </a>
+      <h1 style="margin: 0; font-size: 1.5rem; color: #333;">IELTS PRO</h1>
+    </div>
+
+    <!-- Mobile Menu Trigger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+      <a href="#about">О курсе</a>
+      <a href="#content">Содержание</a>
+      <a href="#screenshots">Платформа</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <!-- Course Introduction Section -->
+  <section id="about">
+    <h2>О курсе</h2>
+    <ul>
+      <li>✅ Если вы давно хотели пройти обучение со мной, но не совпадало ваше расписание с нашими группами</li>
+      <li>✅ Если вы хотите стать частью IELTS Community и даже после окончания курса будете всегда первыми узнавать о новых ловушках экзамена и изменениях</li>
+      <li>✅ Если вы учитель и хотели бы узнать больше о стратегиях, которые действительно работают при подготовке к IELTS</li>
+      <li>✅ Если вы хотите участвовать в семинарах с участием носителей языка и практиковать свой Speaking не только с вашим IELTS тренером 🗣️</li>
+    </ul>
+  </section>
+
+  <!-- Course Content Section with Lessons -->
+  <section id="content">
+    <h2>Содержание курса</h2>
+    <!-- First 7 Lessons -->
+    <div class="lesson" onclick="togglePanel(this)">LESSON 1: IELTS punctuation</div>
+    <div class="panel">Punctuation rules, Hyphenated Words.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 2: Essay Types, Clear position</div>
+    <div class="panel">Analyzing essay prompts and identifying the clear position. How to present clear position. Understanding through analyzing.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 3: Anti-repetition Strategy</div>
+    <div class="panel">Avoiding repetition: reference words+shell nouns and preventing off-topic ideas.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 4: How to get ideas</div>
+    <div class="panel">Free Writing Skill, Brainstorm and organize ideas for essays.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 5: Grammar Accuracy</div>
+    <div class="panel">Common grammar errors in IELTS essay. Articles, Prepositions, Grammar Tenses.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 6: Practice: Introduction and General statement</div>
+    <div class="panel">Peer-review + feedback on practice essay.</div>
+
+    <div class="lesson" onclick="togglePanel(this)">LESSON 7: The role of Topic Sentence in the Essay</div>
+    <div class="panel">1 Block of the course: Task Achievement. Here you will cover: Introduction-Topic Sentence; Controlling idea; Peel paragraphs.</div>
+
+    <!-- Hidden Lessons -->
+    <div id="hidden-lessons" style="display: none;">
+      <div class="lesson" onclick="togglePanel(this)">LESSON 8: Critical thinking</div>
+      <div class="panel">Developing body paragraphs with supporting details and examples.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 9: Essay Paragraphs</div>
+      <div class="panel">How to show the examiner the range of cohesive devices.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 10: Contrast and Comparison Essays</div>
+      <div class="panel">Practice writing contrasting viewpoints and discussing both sides of an argument.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 11: How to write 7+ Conclusion </div>
+      <div class="panel">Mastering the conclusion with a strong restatement of thesis and summarizing key points. Analyzing essay prompts and identifying the best way to write the Conclusion. </div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 12: Inversion, Word Choice</div>
+      <div class="panel">Demonstrating a variety of sentence structures, including the inversion and appropriate word choice.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 13: Counterarguments in Argumentative essays</div>
+      <div class="panel">Introducing counterarguments in Argumentative essay.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 14: Mock Test №1 with a timer + Consultation</div>
+      <div class="panel">Mock test with a Timer. Feedback. Review exam strategies and tips for success. Personalized guidance on areas. </div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 15: Hedging language in Cause/Effect essays</div>
+      <div class="panel">How to use hedging language in the essay types for smooth flow of ideas.</div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 16: Reading session 1</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 17: Benefits of Academic Reading</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 18: Reading: Completion tasks </div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 19: Reading Challenging Task: Headings; Writing Task 1: Line Graph</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 20: Reading: True/False/Not Given; Writing Task 1: Bar charts</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 21: Mock Test №2</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 22: Reading: Matching; Writing Task 1: Bar Charts/Maps</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 23: Bar Chart and Line Graph, stage 2 </div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 24: Writing 1: Process Diagrams; Fix: Line Graph + Reading: Headings; Speaking 3 sections</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 25: Listening skills, Part 1 and Part 2; Pie Charts</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 26: Maps and Process Diagrams</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 27: Maps in Writing and Listening</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 28: MOCK TEST №3</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 29: Reading practice, Speaking Part 3</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 30: PIE CHARTS</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 31: TABLES</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 32: Discursive Essays</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 33: BAR CHART AND PIE CHART</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 34: Timing Practice FULL Writing Section</div>
+      <div class="panel"></div>
+
+      <div class="lesson" onclick="togglePanel(this)">LESSON 35: MOCK TEST №4 Listening and Reading Tests</div>
+      <div class="panel"></div>
+    </div>
+
+    <!-- Show More Button -->
+    <button id="show-more-btn" onclick="toggleLessons()">Показать больше</button>
+  </section>
+
+  <!-- Platform Screenshots Section -->
+  <section id="screenshots">
+    <h2>Скриншоты платформы</h2>
+    <!-- Swiper Container -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="assets/images/edvibe_1.jpg" alt="Скриншот курса 1" class="screenshot">
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="assets/images/edvibe_2.jpg" alt="Скриншот курса 2" class="screenshot">
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="assets/images/edvibe_3.jpg" alt="Скриншот курса 3" class="screenshot">
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="assets/images/edvibe_4.jpg" alt="Скриншот курса 4" class="screenshot">
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <img src="assets/images/edvibe_5.jpg" alt="Скриншот курса 5" class="screenshot">
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    </section>
+
+  <!-- Student Reviews Section -->
+  <section id="reviews">
+    <h2>Отзывы студентов</h2>
+    <div class="reviews">
+        <div class="review">
+            <div class="review-text collapsed">
+                <p>Ксения, добрый день!
+                  Хочу оставить небольшой отзыв о нашем сотрудничестве по обучению детей. У меня двое абсолютно разных детей. До начала занятий с вами они уже изучали английский язык — в самых разных форматах: и в группах, и индивидуально, с разными преподавателями.
+                  С уверенностью могу сказать: вы смогли найти подход к каждому из них, несмотря на разные характеры. Дети очень полюбили занятия с вами, хотя требования всегда были на 100%, без каких-либо послаблений.
+                  Динамика обучения, структура занятий, чёткая отчётность и сама система преподавания — всё это дало результат, значительно превосходящий прежний опыт. Ваша методика, разнообразие форм работы, контроль за выполнением заданий и отношение к детям — всё это вызывает большое уважение. Это действительно профессиональный подход.
+                  Я очень надеюсь, что все знания, полученные от вас, помогут им и в дальнейшем. Впереди IELTS — держим пальцы крестиком за сына 😊 А у Дианы сложный курс — надеемся только на лучший результат.
+                  Спасибо за ваш труд! Очень благодарна 🌸</p>
+                <div class="fade-bottom"></div>
+            </div>
+            <button class="read-more-btn">Читать полностью</button>
+            <p class="reviewer-name">— Ирина Сорокина, родитель студента</p>
+        </div>
+        <div class="review">
+            <p class="review-text"><br>Выражаю огромную благодарность за обучение! Профессиональный подход, высокие требования дали отличный результат в знании английского языка. Буквально за 2 месяца на уровень выше!</p>
+            <p class="reviewer-name">— Галина, родитель студена</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section id="pricing">
+    <h2>Тарифы</h2>
+    <div class="pricing-plans">
+      <div class="pricing-plan">
+        <h3 class="plan-name">Базовый</h3>
+        <div class="plan-price">14 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Доступ к курсу на 3 месяца</li>
+          <li>✅ Все обучающие материалы</li>
+          <li>✅ Тесты и практические задания</li>
+        </ul>
+      </div>
+      
+      <div class="pricing-plan">
+        <h3 class="plan-name">Стандарт</h3>
+        <div class="plan-price">24 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Доступ к курсу на 6 месяцев</li>
+          <li>✅ Все материалы базового тарифа</li>
+          <li>✅ 2 индивидуальные консультации</li>
+          <li>✅ Проверка Writing заданий</li>
+        </ul>
+      </div>
+
+      <div class="pricing-plan">
+        <h3 class="plan-name">Премиум</h3>
+        <div class="plan-price">34 900 ₽</div>
+        <ul class="plan-features">
+          <li>✅ Неограниченный доступ к курсу</li>
+          <li>✅ Все материалы стандартного тарифа</li>
+          <li>✅ 5 индивидуальных консультаций</li>
+          <li>✅ Регулярная проверка заданий</li>
+          <li>✅ Персональный ментор</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section id="contact">
+    <h2>Свяжитесь с нами</h2>
+    <p>Выберите удобный способ связи для получения подробной информации и оплаты курса:</p>
+    <div class="contact-icons">
+      <a href="https://www.instagram.com/kseniya_academy/" target="_blank" class="contact-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/+77782004417" target="_blank" class="contact-icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:libranefertiti93@gmail.com" class="contact-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © Kseniya's Academy 2025. Все права защищены.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/scripts.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</body>
+</html>
