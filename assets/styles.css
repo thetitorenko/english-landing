@@ -659,7 +659,8 @@ html, body {
 #statistics {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: #f8f9fa;
+    background-color: transparent; /* Убираем серый фон */
+    margin-top: 4rem; /* Add space above the Statistics section */
 }
 
 #statistics h2 {
@@ -765,4 +766,122 @@ html, body {
     background-color: #155a9c; /* Более тёмный синий */
     color: #f0f0f0 !important; /* Мягкий белый текст */
     transform: scale(1.05);
+}
+
+/* About Academy Section */
+#about-academy {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: transparent; /* Убираем серый фон */
+    margin-bottom: 4rem; /* Add space below the About Academy section */
+}
+
+/* Swiper Styles for About Carousel */
+.about-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Course Block with Fixed Size */
+.course-block {
+    position: relative; /* Enable positioning for overlay */
+    width: 100%;
+    max-width: 300px;
+    height: 400px; /* Fixed height for all blocks */
+    padding: 2rem;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure overlay stays within the block */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Dark overlay for better text visibility */
+.course-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Place it below the text */
+    border-radius: 12px; /* Match the block's border radius */
+}
+
+/* Ensure text is above the overlay */
+.course-block * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Adjustments for text and icons */
+.course-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.course-block h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.course-block p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.course-block .highlighted-link {
+    margin-top: auto; /* Push the button to the bottom */
+    display: inline-block;
+    background-color: #1e90ff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.course-block .highlighted-link:hover {
+    background-color: #155a9c;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1e90ff;
+    transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #155a9c;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+    background: #1e90ff;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background: #155a9c;
+    opacity: 1;
 }

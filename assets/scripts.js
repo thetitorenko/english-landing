@@ -70,6 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  const aboutSwiper = new Swiper('.about-carousel', {
+    loop: true, // Enable infinite loop
+    centeredSlides: true, // Center the active slide
+    slidesPerView: 1, // Show one slide at a time
+    spaceBetween: 20, // Add space between slides
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000, // Auto-slide every 3 seconds
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2, // Show 2 slides on tablets
+      },
+      1024: {
+        slidesPerView: 3, // Show 3 slides on desktops
+      },
+    },
+  });
+
   const counters = document.querySelectorAll('.stat-number');
 
   counters.forEach(counter => {
