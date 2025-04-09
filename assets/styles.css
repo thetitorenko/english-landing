@@ -659,8 +659,7 @@ html, body {
 #statistics {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: transparent; /* Убираем серый фон */
-    margin-top: 4rem; /* Add space above the Statistics section */
+    background-color: transparent;
 }
 
 #statistics h2 {
@@ -772,8 +771,7 @@ html, body {
 #about-academy {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: transparent; /* Убираем серый фон */
-    margin-bottom: 4rem; /* Add space below the About Academy section */
+    background-color: transparent;
 }
 
 /* Swiper Styles for About Carousel */
