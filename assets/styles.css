@@ -46,6 +46,7 @@ transition: all 0.3s ease;
 /* Main Navigation Menu */
 .nav-menu {
 display: flex;
+align-items: center; /* Align all links vertically */
 }
 nav a {
 margin-left: 1.5rem;
@@ -260,6 +261,7 @@ transform: scale(1.1);
     display: flex;
 }
 
+/* Mobile Navigation Menu */
 .nav-menu {
     position: fixed;
     right: -100%;
@@ -268,7 +270,8 @@ transform: scale(1.1);
     background: white;
     width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 20px; /* Общий отступ для всего меню */
+    padding-left: 20px; /* Добавляем отступ слева */
     transition: 0.3s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
@@ -280,10 +283,10 @@ transform: scale(1.1);
 
 .nav-menu a {
     margin: 10px 0;
-    text-align: center;
+    text-align: left; /* Выравниваем текст по левому краю */
     display: block;
     padding: 10px;
-    width: 100%;
+    width: calc(100% - 20px); /* Учитываем общий отступ */
     box-sizing: border-box;
 }
 
@@ -650,4 +653,116 @@ html, body {
 
 #show-more-btn:hover {
     background-color: #1873cc;
+}
+
+/* Statistics Section */
+#statistics {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+#statistics h2 {
+    margin-bottom: 2rem;
+    color: #1e90ff;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e90ff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Highlighted Link Style */
+.nav-menu .highlighted-link {
+    background-color: #1e90ff;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+/* Hover and Focus States */
+.nav-menu .highlighted-link:hover,
+.nav-menu .highlighted-link:focus {
+    background-color: #155a9c;
+    color: #f0f0f0 !important;
+    transform: none;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center; /* Align all links vertically */
+}
+
+/* General Link Styles */
+.nav-menu a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 0.5rem 1rem; /* Add padding for consistent alignment */
+    border-radius: 8px; /* Add slight rounding for consistency */
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* Adjust Other Links on Hover */
+.nav-menu a:hover {
+    color: #1e90ff; /* Match the blue theme */
+    background-color: rgba(30, 144, 255, 0.1); /* Add subtle background highlight */
+}
+
+/* Убедитесь, что стили применяются только к кнопке IELTS PRO */
+.nav-menu .highlighted-link {
+    background-color: #1e90ff; /* Синий фон */
+    color: white !important; /* Принудительно белый текст */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Состояние при наведении */
+.nav-menu .highlighted-link:hover,
+.nav-menu .highlighted-link:focus {
+    background-color: #155a9c; /* Более тёмный синий */
+    color: #f0f0f0 !important; /* Мягкий белый текст */
+    transform: scale(1.05);
 }

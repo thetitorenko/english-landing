@@ -69,6 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
       disableOnInteraction: false,
     },
   });
+
+  const counters = document.querySelectorAll('.stat-number');
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = Math.ceil(target / 200); // Adjust speed by changing the divisor
+
+      if (current < target) {
+        counter.innerText = current + increment;
+        setTimeout(updateCount, 10); // Adjust speed by changing the timeout
+      } else {
+        counter.innerText = target; // Ensure the final value is correct
+      }
+    };
+
+    updateCount();
+  });
 });
 
 function toggleLessons() {
