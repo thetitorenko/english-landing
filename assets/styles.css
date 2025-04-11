@@ -210,7 +210,12 @@ padding: 1.5rem; /* Уменьшен padding */
 border-radius: 12px;
 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 text-align: left; /* Выравнивание текста по левому краю */
-transition: transform 0.3s ease;
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Добавлена плавная анимация */
+}
+
+.pricing-plan:hover {
+transform: translateY(-5px); /* Поднимаем блок при наведении */
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Увеличиваем тень */
 }
 
 .pricing-plan h3 {
